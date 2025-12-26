@@ -18,10 +18,6 @@ This project  my SQL problem solving skills by analyzing data from Zomato, a lea
 <img width="2752" height="1536" alt="unnamed (1)" src="https://github.com/user-attachments/assets/775050f2-9d11-4792-b7e2-e0999c879a13" />
 
 
-
-<img width="1916" height="1078" alt="Screenshot 2025-12-24 190420" src="https://github.com/user-attachments/assets/bd02d1ac-8936-49cf-bc10-bdb56de11a6e" />
-
-
 ## Database Setup
 ```sql
 CREATE DATABASE zomato_db;
@@ -79,6 +75,15 @@ CREATE TABLE deliveries (
 );
 ```
 
+
+
+<img width="1916" height="1078" alt="Screenshot 2025-12-24 190420" src="https://github.com/user-attachments/assets/bd02d1ac-8936-49cf-bc10-bdb56de11a6e" />
+
+
+
+
+
+
 ## Data Import
 
 ## Data Cleaning and Handling Null Values
@@ -118,6 +123,9 @@ FROM -- table name
 	ORDER BY 1, 4 DESC) as t1
 WHERE rank <= 5
 ```
+
+<img width="1507" height="450" alt="output-1" src="https://github.com/user-attachments/assets/d279238c-e761-4ec8-990f-f489a8bf39d1" />
+
 
 ### 2. Popular Time Slots
 -- Question: Identify the time slots during which the most orders are placed. based on 2-hour intervals.
@@ -159,6 +167,10 @@ GROUP BY time_slot
 ORDER BY order_count DESC;
 ```
 
+
+
+<img width="1551" height="647" alt="output-2" src="https://github.com/user-attachments/assets/f74f2e76-4777-4acf-85d6-a0b40b3637f5" />
+
 ### 3. Order Value Analysis
 -- Question: Find the average order value per customer who has placed more than 750 orders.
 -- Return customer_name, and aov(average order value)
@@ -175,6 +187,9 @@ GROUP BY 1
 HAVING  COUNT(order_id) > 750;
 ```
 
+
+<img width="1548" height="851" alt="output-3" src="https://github.com/user-attachments/assets/e0d4a941-a1b6-4cf7-bc3d-5302fead0b22" />
+
 ### 4. High-Value Customers
 -- Question: List the customers who have spent more than 100K in total on food orders.
 -- return customer_name, and customer_id!
@@ -190,6 +205,9 @@ FROM orders as o
 GROUP BY 1
 HAVING SUM(o.total_amount) > 100000;
 ```
+
+
+<img width="1555" height="845" alt="output-4" src="https://github.com/user-attachments/assets/825c2a81-f79d-4e47-b523-d14f90e8c36e" />
 
 ### 5. Orders Without Delivery
 -- Question: Write a query to find orders that were placed but not delivered. 
@@ -224,6 +242,11 @@ WHERE
 GROUP BY 1
 ORDER BY 2 DESC
 ```
+<img width="1520" height="856" alt="output-5_1" src="https://github.com/user-attachments/assets/ede5cc11-31b8-4cfe-b0a9-b22533a8110e" />
+
+
+
+<img width="1540" height="851" alt="output-5_2" src="https://github.com/user-attachments/assets/f601287d-a8ff-4ed9-bfa6-419ba401e6fd" />
 
 
 ### 6. Restaurant Revenue Ranking: 
@@ -253,6 +276,9 @@ WHERE rank = 1;
 
 ```
 
+<img width="1505" height="602" alt="output-6" src="https://github.com/user-attachments/assets/0cb6ac12-843a-42b1-8ce9-dedddb342c4f" />
+
+
 ### 7. Most Popular Dish by City: 
 -- Identify the most popular dish in each city based on the number of orders.
 
@@ -273,6 +299,9 @@ GROUP BY 1, 2
 WHERE rank = 1;
 ```
 
+<img width="1543" height="563" alt="output-7" src="https://github.com/user-attachments/assets/851ea00a-ac1d-42b1-8450-b84fb3f4a480" />
+
+
 ### 8. Customer Churn: 
 -- Find customers who haven’t placed an order in 2024 but did in 2023.
 
@@ -285,6 +314,9 @@ WHERE
 					(SELECT DISTINCT customer_id FROM orders
 					WHERE EXTRACT(YEAR FROM order_date) = 2024);
 ```
+
+<img width="1526" height="570" alt="output-8" src="https://github.com/user-attachments/assets/1b5f6ea1-9c5c-434b-9067-53a94b61add5" />
+
 
 ### 9. Cancellation Rate Comparison: 
 -- Calculate and compare the order cancellation rate for each restaurant between the 
@@ -339,6 +371,10 @@ JOIN last_year_data AS l
 ON c.restaurant_id = l.restaurant_id;
 ```
 
+
+<img width="1533" height="762" alt="output-9" src="https://github.com/user-attachments/assets/0d4ae25c-3f92-4c00-b71c-6f2317be9ed4" />
+
+
 ### 10. Rider Average Delivery Time: 
 -- Determine each rider's average delivery time.
 
@@ -357,6 +393,8 @@ JOIN deliveries AS d
 ON o.order_id = d.order_id
 WHERE d.delivery_status = 'Delivered';
 ```
+<img width="1500" height="815" alt="output-10" src="https://github.com/user-attachments/assets/8498a327-7b99-4fa7-bf07-cb2e6f7da919" />
+
 
 ### 11. Monthly Restaurant Growth Ratio: 
 -- Calculate each restaurant's growth ratio based on the total number of delivered orders since its joining
