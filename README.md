@@ -11,7 +11,15 @@ This project  my SQL problem solving skills by analyzing data from Zomato, a lea
 - **Business Problems:** Solving 20 specific business problems using SQL queries.
 
 
-<img width="1916" height="1078" alt="Screenshot 2025-12-24 190420" src="https://github.com/user-attachments/assets/304351a7-c16a-41fd-a7c6-a70ae5cc630c" />
+<img width="1831" height="1137" alt="NotebookLM Mind Map" src="https://github.com/user-attachments/assets/50cd0df9-35e5-443c-8814-5ece81d0dac5" />
+
+
+
+<img width="2752" height="1536" alt="unnamed (1)" src="https://github.com/user-attachments/assets/775050f2-9d11-4792-b7e2-e0999c879a13" />
+
+
+
+<img width="1916" height="1078" alt="Screenshot 2025-12-24 190420" src="https://github.com/user-attachments/assets/bd02d1ac-8936-49cf-bc10-bdb56de11a6e" />
 
 
 ## Database Setup
